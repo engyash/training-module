@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // components
-import { UsersComponent } from './';
+import { UsersComponent, UserDetailsComponent } from './';
 
 // services
 import { UserService } from './../../services';
 
 @NgModule({
     declarations: [
-        UsersComponent
+        UsersComponent,
+        UserDetailsComponent
     ],
     imports: [
       BrowserModule,

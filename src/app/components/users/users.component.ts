@@ -38,8 +38,7 @@ export class UsersComponent implements OnInit {
   }
 
   editUserRoles(userId) {
-      console.log('editing user roles', userId);
-      this.router.navigate(['/user', userId]);
+      this.router.navigate(['/users', userId]);
   }
 
 }
