@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // components
-import { UsersComponent, UserDetailsComponent } from './';
+import { UsersComponent, UserDetailsComponent, LoginActivityComponent, UserPermissionComponent } from './';
 
 // services
 import { UserService } from './../../services';
@@ -11,7 +11,9 @@ import { UserService } from './../../services';
 @NgModule({
     declarations: [
         UsersComponent,
-        UserDetailsComponent
+        UserDetailsComponent,
+        LoginActivityComponent,
+        UserPermissionComponent
     ],
     imports: [
       BrowserModule,

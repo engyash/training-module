@@ -1,0 +1,32 @@
+﻿.user-details {
+  background-color: lightgray;
+  float: left;
+  width: 100%;
+
+  &__header-block {
+    background-color: darkgray;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+  }
+
+  &__menu-block {
+    font-size: 14px;
+    float: left;
+    background-color: dimgray;
+    color: #fff;
+    height: 600px;
+  }
+
+  &__content-block {
+    float: left;
+    padding: 20px;
+
+
+    &__details {
+      color: #000;
+      background-color: #fff;
+      font-size: 12px;
+    }
+  }
+}

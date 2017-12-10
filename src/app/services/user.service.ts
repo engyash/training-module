@@ -53,7 +53,7 @@ export class UserService {
     ];
     private roles: any = [
         { id: '70724c9f-1bb0-4d18-be96-452479a101bd', name: 'admin' },
-        { id: '5160deb7-1cc9-4b72-a1a1-307c77ad9eb9', name: 'impatent' },
+        { id: '5160deb7-1cc9-4b72-a1a1-307c77ad9eb9', name: 'impatient' },
         { id: '0f34fcdf-f1b0-46a5-ba2d-ce8088f9d19f', name: 'meta' },
         { id: '8dbf7bf4-4f9b-4ac1-aa48-e65145be96f2', name: 'surgical' }
     ];
