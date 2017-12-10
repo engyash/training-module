@@ -10,6 +10,7 @@ export class UserDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+      console.log('loading user details...');
   }
 
 }

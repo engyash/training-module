@@ -6,8 +6,9 @@ import { UsersComponent, UserDetailsComponent } from './components/users';
 const routes: Routes = [
     { path: '', redirectTo: 'users', pathMatch: 'full' },
     {
-        path: 'users', component: UsersComponent,
+        path: 'users',
         children: [
+            { path: '', component: UsersComponent },
             { path: ':uuid', component: UserDetailsComponent }
         ]
     }
