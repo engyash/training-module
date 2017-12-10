@@ -45,11 +45,11 @@ export class LoginActivityComponent implements OnInit {
       var chart = c3.generate({
           bindto: '#activity-chart',
           data: chartData,
+          size: {
+              height: 200
+          },
           bar: {
-              width: {
-                  ratio: 0.5 // this makes bar width 50% of length between ticks
-              }
-
+              width: 50
           },
           axis: {
               x: {

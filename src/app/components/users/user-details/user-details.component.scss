@@ -27,6 +27,11 @@
       color: #000;
       background-color: #fff;
       font-size: 12px;
+      
+      &__title {
+        padding-top:20px;
+        padding-bottom:15px;
+      }
     }
   }
 }

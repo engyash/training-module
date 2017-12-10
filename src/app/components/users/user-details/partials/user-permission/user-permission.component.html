@@ -1,15 +1,15 @@
-﻿<div class="col-lg-12 col-md-12 col-sm-12">
-  <table class="table table-hover">
+﻿<div class="col-lg-12 col-md-12 col-sm-12 user-permission">
+  <table class="table table-hover user-permission__table">
     <thead>
       <tr>
         <th>MODULE PERMISSIONs</th>
-        <th>HAS ACCESS</th>
+        <th class="user-permission__table__action-heading">HAS ACCESS</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let role of roles">
         <td>{{role.name}}</td>
-        <td>
+        <td class="user-permission__table__action-cloumn">
           <a (click)="setUserRole(role.id, role.hasAccess)"
              class="icon-edit">
             <input type="checkbox" [(ngModel)]="role.hasAccess" />
