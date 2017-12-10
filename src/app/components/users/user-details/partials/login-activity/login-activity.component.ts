@@ -1,5 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import * as _ from 'lodash';
 import * as c3 from 'c3';
+
+import { UserService } from './../../../../../services';
 
 @Component({
   selector: 'login-activity',
@@ -7,19 +12,30 @@ import * as c3 from 'c3';
   styleUrls: ['./login-activity.component.scss']
 })
 export class LoginActivityComponent implements OnInit {
+    private dateFormat = '%Y-%m-%d';
 
-  constructor() { }
+
+    constructor(private userService: UserService, private route: ActivatedRoute) {
+
+    }
+
   ngOnInit() {
-      this.loadChart();
+      var userId = this.route.snapshot.params['userId'];
+      this.getLoginActivities(userId);   
   }
 
-  loadChart() {
+  getLoginActivities(userId) {
+      var data = this.userService.getLoginActivity(userId);
+      this.loadChart(data);
+  }
+
+  loadChart(data) {
       var chartData: any = {};
       chartData.x = 'x';
-      chartData.xFormat = "%Y-%m-%d";
+      chartData.xFormat = this.dateFormat;
       chartData.type = 'bar';
-      var chartX: any = ["2017-11-20", "2017-11-21", "2017-11-22", "2017-11-23", "2017-11-24"];
-      var chartY: any = [2, 4, 1, 7, 3];
+      var chartX: any = _.map(data, 'date');
+      var chartY: any = _.map(data, 'count');
       
       chartX.splice(0, 0, 'x');      
       chartY.splice(0, 0, 'Visits');
@@ -39,7 +55,7 @@ export class LoginActivityComponent implements OnInit {
               x: {
                   type: 'timeseries',
                   tick: {
-                      format: "%Y-%m-%d"
+                      format: this.dateFormat
                   }
               },
 

@@ -57,6 +57,45 @@ export class UserService {
         { id: '0f34fcdf-f1b0-46a5-ba2d-ce8088f9d19f', name: 'meta' },
         { id: '8dbf7bf4-4f9b-4ac1-aa48-e65145be96f2', name: 'surgical' }
     ];
+    private loginActivities: any = [
+        {
+            userId: '347e361d-ab5e-4ae0-a040-d6161a06795f',
+            activities: [
+                { date: '2017-11-20', count: 5 },
+                { date: '2017-11-21', count: 2 },
+                { date: '2017-11-22', count: 7 },
+                { date: '2017-11-23', count: 3 },
+                { date: '2017-11-24', count: 2 }
+            ]
+        },
+        {
+            userId: '8eaadab0-2be8-4cf2-9f4f-de24041d6fd2',
+            activities: [
+                { date: '2017-11-20', count: 4 },
+                { date: '2017-11-21', count: 4 },
+                { date: '2017-11-22', count: 1 },
+                { date: '2017-11-23', count: 1 },
+                { date: '2017-11-24', count: 9 }
+            ] },        
+        {
+            userId: '8ab163d1-9662-4d97-b7d7-ef75703b6a38',
+            activities: [
+                { date: '2017-11-20', count: 3 },
+                { date: '2017-11-21', count: 2 },
+                { date: '2017-11-22', count: 2 },
+                { date: '2017-11-23', count: 2 },
+                { date: '2017-11-24', count: 5 }
+            ] },
+        {
+            userId: '290da3e7-214a-4e61-b67a-2a2bda765d13',
+            activities: [
+                { date: '2017-11-20', count: 1 },
+                { date: '2017-11-21', count: 4 },
+                { date: '2017-11-22', count: 6 },
+                { date: '2017-11-23', count: 7 },
+                { date: '2017-11-24', count: 3 }
+            ] }
+    ];
 
     constructor(private http: Http) {
 
@@ -85,4 +124,12 @@ export class UserService {
     {
 
     }
+
+
+    // login activity
+    getLoginActivity(userId) {
+        return _.filter(this.loginActivities, { 'userId': userId })[0].activities;
+    }
+
+    
 }
