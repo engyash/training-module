@@ -10,7 +10,7 @@
       <tr *ngFor="let role of roles">
         <td>{{role.name}}</td>
         <td>
-          <a (click)="editRole(role.id)"
+          <a (click)="setUserRole(role.id, role.hasAccess)"
              class="icon-edit">
             <input type="checkbox" [(ngModel)]="role.hasAccess" />
           </a>

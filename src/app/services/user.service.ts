@@ -97,14 +97,17 @@ export class UserService {
             ] }
     ];
 
+
     constructor(private http: Http) {
 
     }
 
+    // get user by userId
     getUser(userId) {
         return _.filter(this.users, { id: userId })[0];
     }
 
+    // get users by roleId
     getUsers(roleId = undefined) {
         if (!roleId)
           return this.users;            
@@ -112,16 +115,19 @@ export class UserService {
             return _.filter(this.users, { roles: [{ id: roleId }] });
     }
 
+    // get roles
     getRoles() {
         return this.roles;
     }
 
-    setUserRole(userId,roleId) {
-
-    }
-
-    deleteUserRole(userId,roleId)
-    {
+    // set user role
+    setUserRole(userId, roleId, hasAccess) {
+        
+        var user = this.getUser(userId);
+        if (hasAccess && _.filter(user.roles, { id: roleId }).length === 0)
+            user.roles.push({ id: roleId });
+        else if (!hasAccess && _.filter(user.roles, { id: roleId }).length > 0)
+            user.roles = _.filter(user.roles, (role) => { return role.id !== roleId });
 
     }
 
